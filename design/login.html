@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: white; /* Optional: background color */
+        }
+        .navbar {
+            width: 100%; /* Ensure navbar takes full width */
+        }
+        .form-container {
+            margin: 20px auto; /* Center form container and add top margin */
+            max-width: 500px; /* Limit max width of the form */
+            width: 100%; /* Allow form to be responsive */
+        }
+        form {
+            background-color: #B1B2FF;
+            padding: 20px; /* Add some padding */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        }
+        .loging-title {
+            text-align: center;
+            padding: 1px 0;
+            background-color: #F39F9C;
+            color: white;
+        }
+        .loging-footer {
+            background-color: #F39F9C;
+            text-align: center;
+            padding: 1px 0; /* Add some padding */
+            color: white;
+        }
+        /* Center input elements and button */
+        .form-control {
+            margin: 0 auto 30px; /* Center input elements and add space below */
+            border-radius: 0; /* Remove border radius */
+            height: 50px;
+            width: 95%;
+        }
+        .form-control::placeholder {
+            color: rgb(228, 223, 223);; /* Change placeholder text color */
+            font-size: 25px;
+        }
+        .btn-container {
+            text-align: center; /* Center button */
+        }
+        .spaceup {
+            padding-top: 60px;
+        }
+        .btn-login {
+            background-color: black;
+            color: white;
+            border-radius: 0; /* Remove border radius */
+            height: 50px;
+            width: 50%;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        /* Prevent hover effect */
+        .btn-login:hover {
+            background-color: black; /* Keep the same background color */
+            color: white; /* Keep the text color the same */
+            border: none; /* Remove border */
+            opacity: 1; /* Ensure full opacity */
+        }
+        /* Navbar */
+        .navbar-nav a:hover{
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar start -->
+    <nav class="navbar navbar-light navbar-expand-xl bg-info">
+        <a href="index.html" class="navbar-brand ms-3">
+            <img src="../img/logo2.jpg" style="height: 70px;" alt="logo">
+        </a>
+        <button class="navbar-toggler py-2 px-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto">
+                <a href="../index.html" class="nav-item nav-link" style="font-size: 22px; font-weight: 600;">Home</a>
+                <a href="#" class="nav-item nav-link" style="font-size: 22px; font-weight: 600;">About</a>
+                <a href="#" class="nav-item nav-link" style="font-size: 22px; font-weight: 600;">Education</a>
+                <a href="#" class="nav-item nav-link" style="font-size: 22px; font-weight: 600;">Training</a>
+                <a href="#" class="nav-item nav-link" style="font-size: 22px; font-weight: 600;">Experience</a>
+                <a href="#" class="nav-item nav-link" style="font-size: 22px; font-weight: 600;">Skills</a>
+                <div class="nav-item dropdown" style="font-size: 22px; font-weight: 600;">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Account</a>
+                    <div class="dropdown-menu m-0 bg-info rounded-0">
+                        <a href="signup.html" class="dropdown-item">Create Account</a>
+                        <a href="login.html" class="dropdown-item">Login</a>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center flex-nowrap pt-xl-0" style="margin-left: 15px;">
+                <a href="#" class="btn bg-primary rounded-2 btn text-white fw-bold py-2 px-4 me-3 rounded-0 btn-menu">Hire Me</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Form start -->
+    <div class="form-container">
+        <div class="loging-title">
+            <h3>Login Form</h3>
+        </div>
+        <form class="custom-form" method="POST">
+            <div class="mb-3 spaceup">
+                <input type="email" class="form-control" id="inputCode" name="level" required placeholder="Email Address">
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" id="inputPassword" name="section" required placeholder="Password">
+            </div>
+            <div class="btn-container">
+                <button type="submit" name="btn" class="btn btn-login mb-3">Submit</button>
+            </div>
+        </form>
+        <div class="loging-footer">
+            <h4>Internship 2025</h4>
+        </div>
+    </div>
+    <!-- Form end -->
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

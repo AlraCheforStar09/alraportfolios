@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Personal Portfolio</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <style>
+            /*** About Start ***/
+.about-content .about-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.about-content .about-img .sosial-icon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    padding: 50px;
+    background: rgba(0, 0, 0, .04);
+    transition: 0.5s;
+}
+
+.about-content .about-img:hover .sosial-icon {
+    top: 0;
+}
+/*** About End ***/
+
+
+/*** Education Start ***/
+.education-content .education-item {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(235, 186, 95, 0.3);
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.education-content .education-item:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
+}
+
+.education-content .education-item::after {
+    content: "";
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    top: 50%;
+    left: 0;
+    padding: 0;
+    transform: translateY(-50%);
+    border: 100px solid;
+    border-color: var(--bs-light) transparent var(--bs-light) var(--bs-light);
+    z-index: -1;
+}
+
+.education-content .education-item::before {
+    content: "";
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    border: 100px solid;
+    border-color: #fdd69b #fdd69b #fdd69b transparent;
+    z-index: -1;
+}
+/*** Education End ***/
+
+
+/*** Experience start ***/
+.experience-content .experience-item {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(235, 186, 95, 0.3);
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.experience-content .experience-item:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
+}
+
+.experience-content .experience-item::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    top: 50%;
+    left: 0;
+    padding: 0;
+    transform: translateY(-50%);
+    border: 100px solid;
+    border-color: var(--bs-light) transparent var(--bs-light) var(--bs-light);
+    z-index: -1;
+
+}
+
+.experience-content .experience-item::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    border: 100px solid;
+    border-color: #fdd69b #fdd69b #fdd69b transparent;
+    z-index: -1;
+}
+/*** Experience End ***/
+
+.pt-6 {
+    padding-top: 60px;
+}
+
+.ps-6 {
+    padding-left: 60px;
+}
+
+.pe-6 {
+    padding-right: 30px;
+}
+
+.pb-6 {
+    padding-bottom: 60px;
+}
+
+@media (max-width: 991px) {
+    .container-fluid {
+        border: none;
+    }
+
+    .container-fluid .header-content,
+    .container-fluid .about-header,
+    .container-fluid .education-header,
+    .container-fluid .experience-header,
+    .container-fluid .skills-header,
+    .container-fluid .service-header,
+    .container-fluid .portfolio-header,
+    .container-fluid .blog-header,
+    .container-fluid .testimonial-header,
+    .container-fluid .contact-header {
+        padding: 25px;
+    }
+
+    .container-fluid .header-img,
+    .container-fluid .about-content,
+    .container-fluid .education-content,
+    .container-fluid .experience-content,
+    .container-fluid .skills-content,
+    .container-fluid .service-content,
+    .container-fluid .portfolio-content,
+    .container-fluid .blog-content,
+    .container-fluid .testimonial-content,
+    .container-fluid .contact-content {
+        padding-left: 0;
+        padding-top: 25px;
+    }
+}
+
+.sub-title {
+    font-family: "Edu TAS Beginner", cursive;
+    font-size: 22px;
+    text-align: center;
+    padding-top: 70px;
+}
+.sub-header{
+    font-family: "Edu TAS Beginner", cursive;
+    font-weight: 700;
+    text-align: center;
+}
+.container-fluid {
+    position: relative;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+}
+
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    transition: 0.5s;
+    z-index: 99;
+}
+
+/*** Skills ***/
+.progress {
+            height: 20px; /* Set height for the progress bar */
+            border-radius: 5px; /* Rounded corners */
+        }
+        
+        .progress-bar {
+            width: 0; /* Start at 0 width */
+            transition: width 1s; /* Smooth transition */
+        }
+
+        /* background of all the right sections*/
+        .header-content, .about-header, .education-header, .experience-header,
+        .skills-header, .service-header, .portfolio-header, .contact-header{
+            background-color: black;
+        }
+
+        .text-color h1, .text-color h4{
+            color: rgb(255, 174, 51);
+            font-weight: bold;
+        }
+        .paragraph-color h4, .service-item a, .portfolio-content h4{
+            color: rgb(202, 123, 3);
+        }
+        /* Navbar */
+        .navbar-nav a:hover{
+            color: white;
+            font-weight: bold;
+        }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- Navbar start -->
+    <nav class="navbar navbar-light navbar-expand-xl bg-info">
+        <a href="index.html" class="navbar-brand ms-3">
+            <img src="img/logo.png" style="height: 70px;" alt="logo">
+        </a>
+        <button class="navbar-toggler py-2 px-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto">
+                <a href="#pigraHome" class="nav-item nav-link" style="font-size: 22px; font-weight: 600;">Home</a>
+                <a href="#pigraAbout" class="nav-item nav-link" style="font-size: 22px; font-weight: 600;">About</a>
+                <a href="#pigraEducation" class="nav-item nav-link" style="font-size: 22px; font-weight: 600;">Education</a>
+                <a href="#pigraTraining" class="nav-item nav-link" style="font-size: 22px; font-weight: 600;">Training</a>
+                <a href="#pigraExperience" class="nav-item nav-link" style="font-size: 22px; font-weight: 600;">Experience</a>
+                <a href="#pigraSkills" class="nav-item nav-link" style="font-size: 22px; font-weight: 600;">Skills</a>
+                <a href="#pigraService" class="nav-item nav-link" style="font-size: 22px; font-weight: 600;">Services</a>
+                <a href="#pigraPortfolio" class="nav-item nav-link" style="font-size: 22px; font-weight: 600;">Portfolio</a>
+                <a href="#pigraContact" class="nav-item nav-link" style="font-size: 22px; font-weight: 600;">Contact</a>
+                <!-- <div class="nav-item dropdown" style="font-size: 22px; font-weight: 600;">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Account</a>
+                    <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                        <a href="#" class="dropdown-item">Create Account</a>
+                        <a href="#" class="dropdown-item">Login</a>
+                    </div>
+                </div> -->
+            </div>
+            <div class="d-flex align-items-center flex-nowrap pt-xl-0" style="margin-left: 15px;">
+                <a href="#" class="btn bg-primary rounded-2 btn text-white fw-bold py-2 px-4 me-3 rounded-0 btn-menu">Hire Me</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+        <!-- Header Start -->
+            <div class="container-fluid" id="pigraHome">
+                <div class="row g-0">
+                    <div class="col-12 col-lg-3">
+                        <div class="header-content h-100 pt-6 pe-6 pb-6">
+                            <div class="text-start d-flex flex-column justify-content-center fadeInUp">
+                                <p class="text-white sub-title">Hello I'm ALRA CHEFOR</p>
+                                <h1 class="display-6 text-white sub-header mb-0">SOFTWARE ENGINEER</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-9">
+                        <div class="header-img d-flex h-100 pt-6 ps-6 pb-6">
+                            <div class="row g-3">
+                                <div class="col-xl-6 fadeInUp">
+                                    <div class="bg-light p-4" style="border-radius: 20px">
+                                        <img src="img/profile.png" class="img-fluid w-100" alt="Image">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 wow text-color fadeInUp" data-wow-delay="0.3s">
+                                    <h1 class="display-6 mb-4"><strong>Junior UI/UX Designer Developer</strong></h1>
+                                    <p class="mb-4">
+                                        Hello! I'm Alra, a Software Engineer based in Douala, Cameroon. I am fluent 
+                                        in both English and French. In my free time, I enjoy sports and traveling.
+                                    </p>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-map-marker-alt text-primary me-3"></i>
+                                        <p class="text-dark mb-0">Douala , CAmeroon</p>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-envelope text-primary me-3"></i>
+                                        <p class="text-dark mb-0">atchoungong@mail.com</p>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-envelope text-primary me-3"></i>
+                                        <p class="text-dark mb-0">mtchoungong@yahoo.fr</p>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-5">
+                                        <i class="fa fa-phone-alt text-primary me-3"></i>
+                                        <p class="text-dark mb-0">(+237) 653 27 97 15</p>
+                                    </div>
+                                    <div class="d-flex">
+                                        <a class="btn btn-primary btn-sm-square me-3" href="#"><i class="fab fa-facebook-f text-white"></i></a>
+                                        <a class="btn btn-primary btn-sm-square me-3" href="https://github.com/AlraCheforStar09"><i class="fab fa-github text-white"></i></a>
+                                        <a class="btn btn-primary btn-sm-square me-3" href="#"><i class="fab fa-instagram text-white"></i></a>
+                                        <a class="btn btn-primary btn-sm-square me-0" href="#"><i class="fab fa-linkedin-in text-white"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Header End -->
+
+
+        <!-- About Start -->
+            <div class="container-fluid" id="pigraAbout">
+                <div class="row g-0">
+                    <div class="col-12 col-lg-3">
+                        <div class="about-header h-100 pt-6 pe-6 pb-6">
+                            <div class="text-start d-flex flex-column justify-content-center fadeInUp">
+                                <p class="text-white sub-title">About Me</p>
+                                <h1 class="display-6 text-white sub-header mb-0">UI Designer/Developer</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-9">
+                        <div class="about-content h-100 pt-6 ps-6 pb-6">
+                            <div class="row g-3">
+                                <div class="col-xl-5">
+                                    <div class="about-img bg-light p-4 fadeInUp">
+                                        <img src="img/img4.PNG" class="img-fluid w-100" alt="Image">
+                                    </div>
+                                </div>
+                                <div class="col-xl-7 text-color fadeInUp">
+                                    <h4 class="mb-4">ABOUT ME</h4>
+                                    <p class="mb-4">
+                                        Energetic and creative Computer Engineering graduate specialized in Software Engineering. 
+                                        Passionate about solving real-world problems through technology, with strong skills in programming, 
+                                        system design, and digital innovation. Eager to contribute to dynamic tech teams and grow as a software developer.
+                                    </p>
+                                    <div class="row g-4 mb-4">
+                                        <div class="col-6">
+                                            <p><strong class="fw-bold text-dark">Phone :</strong>(+237) 653 27 97 15</p>
+                                            <p><strong class="fw-bold text-dark">Driving License :</strong>B Category</p>
+                                            <p class="mb-0"><strong class="fw-bold text-dark">Address :</strong>Douala, CAmeroon</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p><strong class="fw-bold text-dark">Nationality :</strong>Cameroonian</p>
+                                            <p><strong class="fw-bold text-dark">Email :</strong>atchoungong@mail.com</p>
+                                            <p class="mb-0"><strong class="fw-bold text-dark">Freelancer :</strong> Available</p>
+                                        </div>
+                                    </div>
+                                    <a href="cv/cv.pdf" download class="btn btn-primary py-2 px-4"> <i class="fas fa-download me-2"></i>Download My CV</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- About End -->
+
+
+        <!-- Education Start -->
+            <div class="container-fluid" id="pigraEducation">
+                <div class="row g-0">
+                    <div class="col-lg-3">
+                        <div class="education-header h-100 pt-6 pe-6 pb-6">
+                            <div class="text-start d-flex flex-column justify-content-center fadeInUp">
+                                <p class="text-white sub-title">Education</p>
+                                <h1 class="display-6 sub-header text-white mb-0">My education qualification</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="education-content h-100 pt-6 ps-6 pb-6">
+                            <div class="row g-3">
+                                <!-- <div class="col-12">
+                                    <div class="education-item rounded p-4 h-100 fadeInUp">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <p class="fs-5 mb-0 me-4">GROUP IGS - ISSAD</p>
+                                            <div>
+                                                <span class="fa fa-calendar me-1"></span> 2017 - 2019
+                                            </div>
+                                        </div>
+                                        <h4 class="mb-3">Bachelor Degree</h4>
+                                        <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti, a quasi velit sint atque non saepe quaerat ducimus, nobis error cupiditate, nisi repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
+                                        </p>
+                                    </div>
+                                </div> -->
+                                <div class="col-12">
+                                    <div class="education-item paragraph-color rounded p-4 h-100 fadeInUp">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <p class="fs-5 mb-0 me-4">GROUP IGS - ISSAD</p>
+                                            <div>
+                                                <span class="fa fa-calendar me-1"></span> 2023 - 2025
+                                            </div>
+                                        </div>
+                                        <h4 class="mb-3">HND (Higher National Diploma)</h4>
+                                        <p class="mb-0">
+                                            Conputer Field : <strong>Software Engineering</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="education-item rounded paragraph-color p-4 h-100 wow fadeInUp" data-wow-delay="0.5s">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <p class="fs-5 mb-0 me-4">Government Bilingual High School Deido</p>
+                                            <div>
+                                                <span class="fa fa-calendar me-1"></span> 2015
+                                            </div>
+                                        </div>
+                                        <h4 class="mb-3">GCE Advance Level Science</h4>
+                                        <p class="mb-0">
+                                            Subjects: <strong>Biology , Chemistry, Mathematics with Statistics</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Education End -->
+
+        <!-- Training Start -->
+            <div class="container-fluid" id="pigraTraining">
+                <div class="row g-0">
+                    <div class="col-lg-3">
+                        <div class="experience-header h-100 pt-6 pe-6 pb-6">
+                            <div class="text-start d-flex flex-column justify-content-center wow fadeInUp" data-wow-delay="0.1s">
+                                <p class="text-white sub-title">Training</p>
+                                <h1 class="display-6 sub-header text-white mb-0">My different Training</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="experience-content paragraph-color h-100 pt-6 ps-6 pb-6">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="experience-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.1s">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <p class="fs-5 mb-0 me-4">Frida House International</p>
+                                            <div>
+                                                <span class="fa fa-calendar me-1"></span> Sep – Nov.2021
+                                            </div>
+                                        </div>
+                                        <h4 class="mb-3">Office – Automation</h4>
+                                        <h5>Modules</h5>
+                                        <ul>
+                                            <li>Introduction to Computer Science</li>
+                                            <li>Microsoft Word</li>
+                                            <li>Microsoft Excel</li>
+                                            <li>Microsoft PowerPoint</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="experience-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.3s">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <p class="fs-5 mb-0 me-4">Frida House International</p>
+                                            <div>
+                                                <span class="fa fa-calendar me-1"></span> Nov.2021 – Feb.2022
+                                            </div>
+                                        </div>
+                                        <h4 class="mb-3">Infographic</h4>
+                                        <h5>Modules</h5>
+                                        <ul>
+                                            <li>Adobe Photoshop</li>
+                                            <li>Adobe Premiere Pro</li>
+                                            <li>Adobe Illustrator</li>
+                                            <li>Adobe After Effect</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Training End -->
+
+        <!-- Experience Start -->
+            <div class="container-fluid" id="pigraExperience">
+                <div class="row g-0">
+                    <div class="col-lg-3">
+                        <div class="experience-header h-100 pt-6 pe-6 pb-6">
+                            <div class="text-start d-flex flex-column justify-content-center wow fadeInUp" data-wow-delay="0.1s">
+                                <p class="text-white sub-title">Experience</p>
+                                <h1 class="display-6 sub-header text-white mb-0">My work experience</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="experience-content h-100 pt-6 ps-6 pb-6">
+                            <div class="row g-3 paragraph-color">
+                                <div class="col-12">
+                                    <div class="experience-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.1s">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <p class="fs-5 mb-0 me-4">College Prive Laic De la Vallee</p>
+                                            <div>
+                                                <span class="fa fa-calendar me-1"></span> 2016 - 2018
+                                            </div>
+                                        </div>
+                                        <h4 class="mb-3">COMPUTER TEACHER</h4>
+                                        <p class="mb-0">
+                                            Facilitated hands-on learning experiences, encouraging students to engage with technology and 
+                                            develop practical skills, including the basics in technology.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="experience-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.3s">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <p class="fs-5 mb-0 me-4">APEIC</p>
+                                            <div>
+                                                <span class="fa fa-calendar me-1"></span> 2022 - 2023
+                                            </div>
+                                        </div>
+                                        <h4 class="mb-3">PROJECT ASSISTANT</h4>
+                                        <p class="mb-0">
+                                            I worked as a Project Assistant at APEIC (Action pour la Promotion de l’Education par l’Image au Cameroun).
+                                            Contributed to various projects aimed at promoting education through visual media.Assisted in project 
+                                            planning, coordination, and execution.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="experience-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.5s">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <p class="fs-5 mb-0 me-4">Neltech</p>
+                                            <div>
+                                                <span class="fa fa-calendar me-1"></span> Actually
+                                            </div>
+                                        </div>
+                                        <h4 class="mb-3">TRAINING</h4>
+                                        <p class="mb-0">
+                                            I'm an Intern in Neltech Company. Gained hands-on experience in building web applications using 
+                                            programming languages such as PHP, HTML, CSS, and Bootstrap..Collaborated with team members on various projects, enhancing my 
+                                            problem-solving and coding skills.Participated in code reviews and contributed to project discussions, 
+                                            fostering a collaborative work environment.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Exparience End -->
+
+        <!-- Skills Start -->
+        <div class="container-fluid" id="pigraSkills">
+                <div class="row g-0">
+                    <div class="col-lg-3">
+                        <div class="skills-header h-100 pt-6 pe-6 pb-6">
+                            <div class="text-start d-flex flex-column justify-content-center wow fadeInUp" data-wow-delay="0.1s">
+                                <p class="text-white sub-title">Skills</p>
+                                <h1 class="display-6 sub-header text-white mb-0">My expertise skills</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="skills-content h-100 pt-6 ps-6 pb-6">
+                            <div class="row g-3">
+                                <div class="col-lg-10 wow fadeInUp" data-wow-delay="0.1s">
+                                    <!-- <h3 class="mb-4">My Skills</h3> -->
+                                    <div class="row align-items-center">
+                                        <div class="col-md-4 skill mb-4">
+                                            <div class="d-flex justify-content-between">
+                                                <h6 class="font-weight-bold">HTML</h6>
+                                                <h6 class="font-weight-bold">95%</h6>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 skill mb-4">
+                                            <div class="d-flex justify-content-between">
+                                                <h6 class="font-weight-bold">CSS</h6>
+                                                <h6 class="font-weight-bold">90%</h6>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 skill mb-4">
+                                            <div class="d-flex justify-content-between">
+                                                <h6 class="font-weight-bold">C/C++</h6>
+                                                <h6 class="font-weight-bold">80%</h6>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 skill mb-4">
+                                            <div class="d-flex justify-content-between">
+                                                <h6 class="font-weight-bold">PHP</h6>
+                                                <h6 class="font-weight-bold">85%</h6>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 skill mb-4">
+                                            <div class="d-flex justify-content-between">
+                                                <h6 class="font-weight-bold">SQL</h6>
+                                                <h6 class="font-weight-bold">85%</h6>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-info" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-4 skill mb-4">
+                                            <div class="d-flex justify-content-between">
+                                                <h6 class="font-weight-bold">C#</h6>
+                                                <h6 class="font-weight-bold">80%</h6>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="background-color: rgb(20, 5, 158);" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 skill mb-4">
+                                            <div class="d-flex justify-content-between">
+                                                <h6 class="font-weight-bold">JavaScript</h6>
+                                                <h6 class="font-weight-bold">60%</h6>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 skill mb-4">
+                                            <div class="d-flex justify-content-between">
+                                                <h6 class="font-weight-bold">UI/UX Figma</h6>
+                                                <h6 class="font-weight-bold">70%</h6>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="background-color: rgb(47, 224, 165);" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 skill mb-4">
+                                            <div class="d-flex justify-content-between">
+                                                <h6 class="font-weight-bold">Adobe Photoshop</h6>
+                                                <h6 class="font-weight-bold">80%</h6>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="background-color: rgb(228, 98, 11);" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 skill mb-4">
+                                            <div class="d-flex justify-content-between">
+                                                <h6 class="font-weight-bold">Adobe Premiere Pro</h6>
+                                                <h6 class="font-weight-bold">70%</h6>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="background-color: rgb(192, 11, 228);" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 skill mb-4">
+                                            <div class="d-flex justify-content-between">
+                                                <h6 class="font-weight-bold">Adobe Aftereffect</h6>
+                                                <h6 class="font-weight-bold">60%</h6>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="background-color: rgb(20, 5, 158);" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 skill mb-4">
+                                            <div class="d-flex justify-content-between">
+                                                <h6 class="font-weight-bold">Microsoft Word</h6>
+                                                <h6 class="font-weight-bold">90%</h6>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="background-color: rgb(228, 11, 181);" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 skill mb-4">
+                                            <div class="d-flex justify-content-between">
+                                                <h6 class="font-weight-bold">Microsoft Excel</h6>
+                                                <h6 class="font-weight-bold">90%</h6>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="background-color: rgb(11, 228, 83);" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-4 skill mb-4">
+                                            <div class="d-flex justify-content-between">
+                                                <h6 class="font-weight-bold">Laravel</h6>
+                                                <h6 class="font-weight-bold">50%</h6>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="background-color: rgb(11, 228, 217);" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 skill mb-4">
+                                            <div class="d-flex justify-content-between">
+                                                <h6 class="font-weight-bold">Bootstrap</h6>
+                                                <h6 class="font-weight-bold">90%</h6>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="background-color: rgb(199, 15, 2);" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Skills End -->
+
+
+        <!-- Service Start -->
+            <div class="container-fluid" id="pigraService">
+                <div class="row g-0">
+                    <div class="col-lg-3">
+                        <div class="service-header h-100 pt-6 pe-6 pb-6">
+                            <div class="text-start d-flex flex-column justify-content-center wow fadeInUp" data-wow-delay="0.1s">
+                                <p class="text-white sub-title">My Services</p>
+                                <h1 class="display-6 sub-header text-white mb-0">What I do for you</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="service-content h-100 pt-6 ps-6 pb-6">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="service-item p-4 wow fadeInUp" data-wow-delay="0.1s">
+                                        <div class="row g-4 align-items-center">
+                                            <div class="col-xl-2">
+                                                <i class="fas fa-bezier-curve fa-3x"></i>
+                                            </div>
+                                            <div class="col-xl-3">
+                                                <a href="#" class="h4 mb-0">Creative Design</a>
+                                            </div>
+                                            <div class="col-xl-4">
+                                                <p class="mb-0">
+                                                    Designing visually stunning and responsive websites or web application that meet the needs of modern users.
+                                                </p>
+                                            </div>
+                                            <div class="col-xl-3">
+                                                <p><i class="fa fa-check me-2"></i> UI/UX Design</p>
+                                                <p><i class="fa fa-check me-2"></i> Research</p>
+                                                <!-- <p class="mb-0"><i class="fa fa-check me-2"></i> Mobile App</p> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="service-item p-4 wow fadeInUp" data-wow-delay="0.3s">
+                                        <div class="row g-4 align-items-center">
+                                            <div class="col-xl-2">
+                                                <i class="fas fa-laptop-code fa-3x"></i>
+                                            </div>
+                                            <div class="col-xl-3">
+                                                <a href="#" class="h4 mb-0">Web Developm</a>
+                                            </div>
+                                            <div class="col-xl-4">
+                                                <p class="mb-0">
+                                                    Building responsive and user-friendly web applications and Websites that deliver exceptional user experiences
+                                                </p>
+                                            </div>
+                                            <div class="col-xl-3">
+                                                <p><i class="fa fa-check me-2"></i> UI/UX Design</p>
+                                                <p><i class="fa fa-check me-2"></i> Research</p>
+                                                <!-- <p class="mb-0"><i class="fa fa-check me-2"></i> Mobile App</p> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="service-item p-4 wow fadeInUp" data-wow-delay="0.5s">
+                                        <div class="row g-4 align-items-center">
+                                            <div class="col-xl-2">
+                                                <i class="fas fa-laptop-code fa-3x"></i>
+                                            </div>
+                                            <div class="col-xl-3">
+                                                <a href="#" class="h4 mb-0">Desktop Application</a>
+                                            </div>
+                                            <div class="col-xl-4">
+                                                <p class="mb-0">
+                                                    Designing and developing desktop applications that provide seamless users experiences and enhance operational efficiency
+                                                </p>
+                                            </div>
+                                            <div class="col-xl-3">
+                                                <p><i class="fa fa-check me-2"></i> UI/UX Design</p>
+                                                <p><i class="fa fa-check me-2"></i> Research</p>
+                                                <!-- <p class="mb-0"><i class="fa fa-check me-2"></i> Mobile App</p> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Service End -->
+
+
+        <!-- Portfolio Start -->
+            <div class="container-fluid" id="pigraPortfolio">
+                <div class="row g-0">
+                    <div class="col-lg-3">
+                        <div class="portfolio-header h-100 pt-6 pe-6 pb-6">
+                            <div class="text-start d-flex flex-column justify-content-center wow fadeInUp" data-wow-delay="0.1s">
+                                <p class="text-white sub-title">Portfolio</p>
+                                <h1 class="display-6 sub-header text-white mb-0">My Recent Works</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="portfolio-content h-100 pt-6 ps-6 pb-6">
+                            <div class="portfolio-item py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="row g-4 align-items-center">
+                                    <div class="col-xl-6">
+                                        <h4 class="">Web Design</h4>
+                                        <h1 class="display-6 mb-0">Forms Design using Figma</h1>
+                                    </div>
+                                    <div class="col-9 col-xl-4">
+                                        <div class="portfolio-img">
+                                            <div class="portfolio-img-inner">
+                                                <img src="img/design3.PNG" class="img-fluid" alt="Image">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 col-xl-2">
+                                        <div class="view-img">
+                                            <a href="img/design3.PNG" class="btn btn-primary btn-lg-square"  data-lightbox="Portfolio-1"><i class="fas fa-plus"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-item py-5 border-bottom wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="row g-4 align-items-center">
+                                    <div class="col-xl-6">
+                                        <h4 class="">Web Development</h4>
+                                        <h1 class="display-6 mb-0">Building Forms</h1>
+                                    </div>
+                                    <div class="col-9 col-xl-4">
+                                        <div class="portfolio-img">
+                                            <div class="portfolio-img-inner">
+                                                <img src="img/design2.PNG" class="img-fluid" alt="Image">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 col-xl-2">
+                                        <div class="view-img">
+                                            <a href="design/login.html" class="btn btn-primary py-2 px-4"> <i class="fas fa-eye me-2"></i>Click to Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-item py-5 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="row g-4 align-items-center">
+                                    <div class="col-xl-6">
+                                        <h4 class="">Desktop App Development</h4>
+                                        <h1 class="display-6 mb-0">Developping an Employee Management System</h1>
+                                    </div>
+                                    <div class="col-9 col-xl-4">
+                                        <div class="portfolio-img">
+                                            <div class="portfolio-img-inner">
+                                                <img src="img/desktop.png" class="img-fluid" alt="Image">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 col-xl-2">
+                                        <div class="view-img">
+                                            <a href="img/desktop.png" class="btn btn-primary btn-lg-square"  data-lightbox="portfolio-3"><i class="fas fa-plus"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Portfolio End -->
+
+        <!-- Contact Start -->
+            <div class="container-fluid" id="pigraContact">
+                <div class="row g-0">
+                    <div class="col-lg-3">
+                        <div class="contact-header h-100 pt-6 pe-6 pb-6">
+                            <div class="text-start d-flex flex-column justify-content-center wow fadeInUp" data-wow-delay="0.1s">
+                                <p class="text-white sub-title">Contact Me</p>
+                                <h1 class="display-6 sub-header text-white mb-0">Let’s Start A New Project</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                       <div class="contact-content h-100 pt-6 ps-6 pb-6">
+                            <div class="bg-light p-4">
+                                <div class="row g-5">
+                                        <div>
+                                            <form>
+                                                <div class="row g-3">
+                                                    <div class="col-lg-12 col-xl-6">
+                                                        <div class="form-floating">
+                                                            <input type="text" class="form-control border-0" id="name" placeholder="Your Name">
+                                                            <label for="name">Your Name</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-xl-6">
+                                                        <div class="form-floating">
+                                                            <input type="email" class="form-control border-0" id="email" placeholder="Your Email">
+                                                            <label for="email">Your Email</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-xl-6">
+                                                        <div class="form-floating">
+                                                            <input type="phone" class="form-control border-0" id="phone" placeholder="Phone">
+                                                            <label for="phone">Your Phone</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-xl-6">
+                                                        <div class="form-floating">
+                                                            <input type="text" class="form-control border-0" id="project" placeholder="Project">
+                                                            <label for="project">Your Project</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-floating">
+                                                            <input type="text" class="form-control border-0" id="subject" placeholder="Subject">
+                                                            <label for="subject">Subject</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-floating">
+                                                            <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 120px"></textarea>
+                                                            <label for="message">Message</label>
+                                                        </div>
+                
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <button class="btn btn-primary w-100 py-3">Send Message</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                </div>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Contact End -->
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer bg-dark border-bottom-0">
+            <div class="container wow fadeIn" data-wow-delay="0.1s">
+                <div class="row g-0">
+                    <div class="col-12">
+                       <div class="footer-content h-100 pt-6 ps-6 pb-6">
+                            <div class="row g-4 align-items-center">
+                                <div class="col-12 text-center">
+                                    <div class="d-flex justify-content-center">
+                                        <a class="btn btn-light btn-md-square me-3" href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="btn btn-light btn-md-square me-3" href="https://github.com/AlraCheforStar09"><i class="fab fa-github"></i></a>
+                                        <a class="btn btn-light btn-md-square me-3" href="#"><i class="fab fa-instagram"></i></a>
+                                        <a class="btn btn-light btn-md-square me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <span class="text-body"><a href="#" class="text-white"><i class="fas fa-copyright text-body me-2"></i>AlraDeveloper2025</a></span>
+                                </div>
+                            </div>
+                       </div>        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a> 
+        
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Include jQuery and Waypoints -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                // Skills animation on scroll
+                $('.skill').waypoint(function () {
+                    $('.progress .progress-bar').each(function () {
+                        $(this).css("width", $(this).attr("aria-valuenow") + '%');
+                    });
+                }, { offset: '80%' });
+            });
+        </script>
+    </body>
+
+</html>
